@@ -2,7 +2,13 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
+  helper_method :current_project_photo
+  def current_project_photo
+     Project.find(params[:project_id])
+  end
+  def current_project
+     Project.find(params[:id])
+  end
   private
   
   #-> Prelang (user_login:devise)

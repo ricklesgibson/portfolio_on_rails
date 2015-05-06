@@ -1,8 +1,17 @@
-<%= form_for @project, :html => { :class => 'form-horizontal form-model' } do |f| %>
+
+<%= form_for(@project, :html => { :class => 'form-horizontal form-model', multipart: true  }) do |f| %>
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :title, :class => 'text-field form-control' %>
+      <%#= f.file_field :slide %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :photos, :class => 'control-label' %>
+    <div class="controls">
+      <%= file_field_tag "slides[]", type: :file, multiple: true %>
     </div>
   </div>
 
@@ -13,4 +22,5 @@
                   projects_path, :class => 'btn btn-default' %>
     </div>
   </div>
+
 <% end %>

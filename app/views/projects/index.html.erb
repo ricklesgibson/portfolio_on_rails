@@ -109,8 +109,13 @@
 
 <!-- DB projects -->
     <% @projects.each do |project| %>
+        <%= project.id %>
         <%= project.title %><br />
+        <% project.photos.each do |p| %>
+          <%= image_tag p.slide %> Photo
+          <% end %>
         <% end %>
+
 
 
 

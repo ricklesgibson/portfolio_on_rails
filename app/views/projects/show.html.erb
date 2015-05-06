@@ -6,7 +6,15 @@
 <div class="fieldset">
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
-      <dd><pre class="prettyprint"><%= @project.title %></pre></dd>
+      <dd><pre class="prettyprint">
+      <%= @project.title %>
+      <% @project.photos.each do |p| %>
+          <%= image_tag p.slide %><br />
+          <%= button_to "Remove Photo", project_photo_path(@project, p), method: :delete %><br />  
+
+      <% end %>
+      <%= button_to "Add Photo", new_project_photo_path(@project, @project.photos), method: :get %><br />
+      </pre></dd>
   </dl>
 </div>
 

@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 #Font Awesome
 gem "font-awesome-rails"
 
+#paperclip
+gem "paperclip"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
