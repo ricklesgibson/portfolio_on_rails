@@ -94,27 +94,15 @@
     <section id="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-4 text-center">
-                    <a id="p1" class="btn btn-primary btn-xl">Bar</a>
-                </div>
-                <div class="col-lg-4 col-sm-4  text-center">
-                    <a id="p2" class="btn btn-primary btn-xl">Living Room</a>
-                </div>
-                <div class="col-lg-4 col-sm-4  text-center">
-                    <a id="p3" class="btn btn-primary btn-xl">Salon</a>
-                </div>
+                
+                <% @projects.each do |project| %>
+                    <div class="col-lg-4 col-sm-4  text-center">
+                        <a data-project-id="p<%= project.id.to_s %>" class="btn btn-primary btn-xl projectbutton"><%= project.title %></a>
+                    </div>
+                <% end %>
             </div>
         </div>
     </section>
-
-<!-- DB projects -->
-    <% @projects.each do |project| %>
-        <%= project.id %>
-        <%= project.title %><br />
-        <% project.photos.each do |p| %>
-          <%= image_tag p.slide %> Photo
-          <% end %>
-        <% end %>
 
 
 
@@ -123,68 +111,20 @@
     <section id="slideshow">
         
             
-              <div class="diy-slideshow current project1">
-                <figure class="show">
-                    <%= image_tag("bar/bar1.JPG", :width=>"100%") %><figcaption>"Bar1"</figcaption> 
-                </figure>
-              <figure>
-                <%= image_tag("bar/bar2.JPG", :width=>"100%") %><figcaption>"Bar2"</figcaption> 
-                </figure>
-                <figure>
-                <%= image_tag("bar/bar3.JPG", :width=>"100%") %><figcaption>"Bar3"</figcaption> 
-                </figure>
-                <figure>
-                <%= image_tag("bar/bar4.JPG", :width=>"100%") %><figcaption>"Bar4"</figcaption> 
-                </figure>
-                <figure>
-                <%= image_tag("bar/bar5.jpg", :width=>"100%") %><figcaption>"Bar5"</figcaption> 
-                </figure>
-               <span class="prev">&laquo;</span>
-                <span class="next">&raquo;</span>
               
-              
-            </div> 
 
-
-            <div class="diy-slideshow project2">
-                <figure>
-                  <%= image_tag("room/room1.JPG", :width=>"100%") %><figcaption>"Room"</figcaption> 
-                  </figure>
-                  <figure>
-                   <%= image_tag("room/room2.JPG", :width=>"100%") %><figcaption>"Room"</figcaption> 
-                  </figure>
-                  <figure>
-                   <%= image_tag("room/room3.JPG", :width=>"100%") %><figcaption>"Room"</figcaption> 
-                  </figure>
-                  <figure>
-                   <%= image_tag("room/room4.JPG", :width=>"100%") %><figcaption>"Room"</figcaption> 
-                  </figure>
-                  <figure>
-                   <%= image_tag("room/room5.JPG", :width=>"100%") %><figcaption>"Room"</figcaption> 
-                  </figure>
-                <span class="prev">&laquo;</span>
-                <span class="next">&raquo;</span>
-            </div> 
-
-            <div class="diy-slideshow project3">
-                <figure>
-                   <%= image_tag("salon/salon1.JPG", :width=>"100%") %><figcaption>"Salon"</figcaption> 
-                  </figure>
-                  <figure>
-                  <%= image_tag("salon/salon2.JPG", :width=>"100%") %><figcaption>"Salon"</figcaption> 
-                  </figure>
-                  <figure>
-                  <%= image_tag("salon/salon3.JPG", :width=>"100%") %><figcaption>"Salon"</figcaption> 
-                  </figure>
-                  <figure>
-                  <%= image_tag("salon/salon4.JPG", :width=>"100%") %><figcaption>"Salon"</figcaption> 
-                  </figure>
-                  <figure>
-                  <%= image_tag("salon/salon5.JPG", :width=>"100%") %><figcaption>"Salon"</figcaption> 
-                  </figure>
-                <span class="prev">&laquo;</span>
-                <span class="next">&raquo;</span>
-            </div> 
+            <% @projects.each do |project| %>
+            <div id="p<%= project.id.to_s %>" class="diy-slideshow <%= project == Project.first ? 'current' : ''%>"> 
+                <% project.photos.each do |p| %>
+                <figure class="<%= p == project.photos.first ? 'show' : ''%>">
+                    <%= image_tag(p.slide, :width=>"100%") %><figcaption><%= project.title %></figcaption>
+                </figure>
+                <% end %>
+            <span class="prev">&laquo;</span>
+            <span class="next">&raquo;</span>
+            </div>
+            <% end %>
+            
            
         
 
@@ -217,24 +157,24 @@
     </section>
 
     <!-- jQuery -->
-    <% javascript_include_tag "jquery.js", :defer => "defer"  %>
+    <%# javascript_include_tag "jquery.js", :defer => "defer"  %>
     <!-- <script src="js/jquery.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
-    <% javascript_include_tag "bootstrap.min.js", :defer => "defer"  %>
+    <%# javascript_include_tag "bootstrap.min.js", :defer => "defer"  %>
     <!-- <script src="js/bootstrap.min.js"></script> -->
 
     <!-- Plugin JavaScript -->
-    <% javascript_include_tag "jquery.easing.min.js", :defer => "defer"  %>
-    <% javascript_include_tag "jquery.fittext.js", :defer => "defer"  %>
-    <% javascript_include_tag "wow.min.js", :defer => "defer" %>
+    <%# javascript_include_tag "jquery.easing.min.js", :defer => "defer"  %>
+    <%# javascript_include_tag "jquery.fittext.js", :defer => "defer"  %>
+    <%# javascript_include_tag "wow.min.js", :defer => "defer" %>
     <!-- <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/wow.min.js"></script> -->
 
     <!-- Custom Theme JavaScript -->
-    <% javascript_include_tag "creative.js", :defer => "defer" %>
-    <% javascript_include_tag "index.js", :defer => "defer" %>
+    <%# javascript_include_tag "creative.js", :defer => "defer" %>
+    <%# javascript_include_tag "index.js", :defer => "defer" %>
    <!--  <script src="js/creative.js"></script>
     <script src="js/index.js"></script> -->
  
