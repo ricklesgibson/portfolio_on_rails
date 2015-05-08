@@ -25,7 +25,10 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-    redirect_to current_project
+    respond_to do |format|
+      format.html { redirect_to projects_url, notice: 'Photo was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   def photo_params
