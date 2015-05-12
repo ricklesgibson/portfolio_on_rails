@@ -14,6 +14,7 @@
 *= require bootstrap
 *= require bootstrap.min
 *= require font-awesome
+*= require rails_bootstrap_forms
 *= require_tree .
 *= require_self
 */
@@ -22,6 +23,12 @@
 // @import "bootstrap-sprockets";
 
  @import "bootstrap";
+
+@font-face {
+      font-family: "Charcuterie Serif Bold";
+      src: font-url('Charcuterie_Serif_Bold-2.otf');
+      font-weight: bold;
+  }
 
 // //->Prelang (ui_framework:twitter_bootstrap)
 
@@ -53,7 +60,7 @@ body {
 }
 
 body {
-    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    font-family: "Charcuterie Serif Bold";
     font-size: 24px;
 }
 
@@ -86,7 +93,7 @@ figure{
 }
 figcaption{
   position: absolute;
-  font-family: sans-serif;
+  font-family: "Charcuterie Serif Bold";
   font-size: .8em;
   bottom: .75em;
   right: .35em;
@@ -166,7 +173,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: "Charcuterie Serif Bold";
 }
 
 p {
@@ -189,7 +196,10 @@ p {
 }
 
 section {
-    padding: 100px 0;
+    padding: 5px 0;
+}
+section#contact {
+  padding: 100px 0;
 }
 
 aside {
@@ -202,7 +212,7 @@ aside {
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: "Charcuterie Serif Bold";
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -211,7 +221,7 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: "Charcuterie Serif Bold";
     font-weight: 700;
     color: #f05f40;
 }
@@ -302,7 +312,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url('landingpage.png');
+    background-image: url('landingpage.jpg');
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -557,7 +567,7 @@ fieldset[disabled] .btn-primary.active {
     border: 0;
     border-radius: 300px;
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: "Charcuterie Serif Bold";
     font-weight: 700;
 }
 

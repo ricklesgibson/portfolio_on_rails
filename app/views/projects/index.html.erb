@@ -2,10 +2,13 @@
 
 <div class="container">
             <div class="row">
-                
+                <div class="col-lg-4 col-sm-4  text-center">
+                   <%= link_to("New Project", new_project_path, :class=>"btn btn-primary btn-xl projectbutton") %>
+                   
+                </div>
                 <% @projects.each do |project| %>
                     <div class="col-lg-4 col-sm-4  text-center">
-                       <%= link_to (project_path(project)), :class=>"btn btn-primary btn-xl projectbutton" do%>
+                       <%= link_to (edit_project_path(project)), :class=>"btn btn-primary btn-xl projectbutton" do%>
                        Edit <%= project.title %>
                        <% end %>
                     </div>

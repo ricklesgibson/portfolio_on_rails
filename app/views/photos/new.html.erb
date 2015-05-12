@@ -1,5 +1,6 @@
-<%= form_for([@project, @photo]) do |f| %>
+<%= bootstrap_form_for([@project, @photo]) do |f| %>
 <%= f.file_field :slide %>
+<%= f.text_field :caption %>
 <%= f.submit %>
 <% end %>
 <%= current_project_photo.title %>

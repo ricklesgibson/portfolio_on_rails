@@ -21,6 +21,21 @@ class PhotosController < ApplicationController
   def show
 
   end
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    respond_to do |format|
+      if @photo.update(photo_params)
+        format.html { redirect_to @project, notice: 'Photo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @photo }
+      else
+        format.html { render :edit }
+        format.json { render json: @photo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def destroy
     @photo = Photo.find(params[:id])
@@ -32,6 +47,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:slide)
+    params.require(:photo).permit(:slide, :caption)
   end
 end

@@ -6,6 +6,18 @@ gem "font-awesome-rails"
 #paperclip
 gem "paperclip"
 
+#figaro gem for ENV
+gem "figaro"
+
+#12 Factor Gem for Heroku
+gem 'rails_12factor', group: :production
+
+#AWS Gem for photos on S3. Needs to be under the v2 release for paperclip support
+gem 'aws-sdk', '< 2.0'
+
+#bootstrap form to look pretty
+gem 'bootstrap_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record

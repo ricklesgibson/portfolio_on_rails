@@ -16,3 +16,5 @@ Rails.application.config.assets.precompile += %w( jquery.fittext.js )
 Rails.application.config.assets.precompile += %w( wow.min.js)
 Rails.application.config.assets.precompile += %w( creative.js )
 Rails.application.config.assets.precompile += %w( index.js )
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/fonts"
+Rails.application.config.assets.precompile += %w( .svg .eot .woff .ttf .otf)

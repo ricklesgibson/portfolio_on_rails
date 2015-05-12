@@ -79,11 +79,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About</h2>
+                    <h2 class="section-heading"></h2>
                     <hr class="light">
-                    <p class="text-faded">Have a look at some of my work</p>
-                    <p>I love paisley. That's where it started.<br /> Now, thirteen years after I learned how to do hena body illustration from a Pakistani friend of mine, it influences the way I take in the living, breathing, changing world around me. The way I see beautiful decoration is in a combination of visual motifs and lines drawn by a skilled hand. So, when I imbue living spaces, I try to do it in a way the ivy covers old brick buildings, and in the way some graffiti suggests that the metro car on which it's painted carries living things from once place to another. My projects disregard the given ninety-degree angles and flat, bland surfaces an observer expects to see in the room they enter.<br />There's something about the places we become familiar with, that becomes a part of the way we think every time we're in them. Our offices at work, the bathrooms we use every day, living rooms and kitchens that welcome us with memeories, and the ambience in these places is greatly important, considering we spend so much of our lives in them. For years I have refused to accept a plain wall as it is, and why would I, when it has the ability to reflect the way I want to feel most of the time?<br />If you are inclined to make the inside or outside of your building appear exactly as you want it to lok let's discuss how e can make your project set a palpable atmosphere for creatativity and progress. How the room you want to change could open the minds of your guests before they open their mouths. How the area in question should make you happy to return to it, if at times for nothing more than the wordly aesthetic so distruptive to a circular train of thought.<br />Past houses and homes, my objective with interior painting is crative dwelling aereas that encourage all who enter to reminisce on their travels, focus on their passions, and conjure peace of mind like time spent with best friends.<br />Thanks for taking the time to read this. Happy living.<br /> Bennette   </p>
-                    </p>
+                    
+                    <p>The spaces in which we live and work should be sanctuaries of thought, halls of wonder, havens of community, and incubators of familiarity.  For the priceless time we pass in them, in toil, in togetherness, in reflection, are they sacred.  As such these wall-defined areas deserve our attention at least once, that they may indefinitely summon our living conscience and call to action our finest ideas.  Generally speaking, environment is paramount.</p>
+                
                     <a href="#portfolio" class="page-scroll btn btn-default btn-xl">Portfolio</a>
                 </div>
             </div>
@@ -114,7 +114,7 @@
             <div id="p<%= project.id.to_s %>" class="diy-slideshow <%= project == Project.first ? 'current' : ''%>"> 
                 <% project.photos.each do |p| %>
                 <figure class="<%= project == Project.first && p == project.photos.first ? 'show' : ''%>">
-                    <%= image_tag(p.slide, :width=>"100%") %><figcaption><%= project.title %></figcaption>
+                    <%= image_tag(p.slide, :width=>"100%") %><figcaption><%= p.caption %></figcaption>
                 </figure>
                 <% end %>
             <span class="prev">&laquo;</span>
@@ -132,9 +132,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project?</p>
+                    
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i href="tel:+19192609484" class="fa fa-phone fa-3x wow bounceIn"></i>
