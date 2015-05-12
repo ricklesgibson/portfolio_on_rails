@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require index
 //= require jquery
 //= require jquery_ujs
 //= require cbpAnimatedHeader
@@ -19,5 +20,4 @@
 //= require wow.min
 //= require bootstrap
 //= require creative
-//= require index
 //= require_tree .
