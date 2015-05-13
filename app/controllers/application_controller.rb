@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
      Project.find(params[:id])
   end
   private
+
+  # To get login to redirect to Projects#index
+  def after_sign_in_path_for(resource)
+    projects_path
+  end
   
   #-> Prelang (user_login:devise)
   def require_user_signed_in
