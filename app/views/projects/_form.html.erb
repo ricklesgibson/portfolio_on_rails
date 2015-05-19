@@ -1,7 +1,7 @@
 
 <%= bootstrap_form_for(@project) do |f| %>
-   <%= f.text_field :title, hide_label: true, placeholder: "Title", :class => 'text-field form-control' %>
+   <%= f.text_field :title, hide_label: true, placeholder: "Title", :class => 'text-field form-control text-center' %>
    <%= f.submit "Update", :class => 'btn btn-primary' %>
-   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),projects_path, :class => 'btn btn-primary' %>
+   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),projects_path, :class => 'btn btn-primary ' %>
  
 <% end %>
