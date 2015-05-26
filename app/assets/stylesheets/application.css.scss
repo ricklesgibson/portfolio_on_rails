@@ -232,8 +232,11 @@ p {
 p.uppercase {
     text-transform: uppercase;
     letter-spacing: 3px;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    line-height: 250%;
 }
-p.uppercase::first-letter {
+p.uppercase > span {
   font-size: 25px;
 }
 
@@ -263,6 +266,7 @@ section#contact {
 
 .fa-envelope-o{
   color: white;
+  text-align: center;
 }
 
 aside {
@@ -286,7 +290,9 @@ aside {
     text-transform: uppercase;
     font-family: "Charcuterie Serif Bold";
     font-weight: 700;
+    font-size: 25px;
     color: #f05f40;
+    letter-spacing: 5px;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -336,6 +342,7 @@ aside {
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
         color: grey;
+        letter-spacing: 5px;
     }
 
     .navbar-default .nav > li>a:hover,
@@ -361,6 +368,7 @@ aside {
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
         color: white;
+        letter-spacing: 5px;
     }
 
     .navbar-default.affix .nav > li>a:hover,
