@@ -167,6 +167,7 @@ figure.show{
   margin-top: -.75em;
   opacity: .3;
   user-select: none;
+  font-family: Futura;
 }
 .next:hover, .prev:hover{
   cursor: pointer;
@@ -245,8 +246,16 @@ p {
 section {
     padding: 5px 0;
 }
+section#portfolio {
+  background-color: black;
+}
 section#contact {
   padding: 100px 0;
+  background-color: black;
+}
+
+.fa-envelope-o{
+  color: white;
 }
 
 aside {
@@ -475,7 +484,7 @@ header .img-circle {
 }
 
 .btn-default {
-    border-color: #fff;
+    border-color: white;
     color: white;
     background-color: black;
     -webkit-transition: all .35s;
@@ -528,7 +537,7 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-    border-color: #f05f40;
+    border-color: white !important;
     color: #fff;
     margin: 10px;
     background-color: black;
@@ -611,7 +620,6 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn {
-    border: 0;
     border-radius: 300px;
     text-transform: uppercase;
     font-family: "Charcuterie Serif Bold";
