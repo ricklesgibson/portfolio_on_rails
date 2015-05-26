@@ -65,26 +65,19 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                  
-                
              </div>
         </div>
     </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading"></h2>
                     <hr class="light">
-                    
                     <p>The spaces in which we live and work should be sanctuaries of thought, halls of wonder, havens of community, and incubators of familiarity.  For the priceless time we pass in them, in toil, in togetherness, in reflection, are they sacred.  As such these wall-defined areas deserve our attention at least once, that they may indefinitely summon our living conscience and call to action our finest ideas.  Generally speaking, environment is paramount.</p>
-                
-                    <a href="#portfolio" class="page-scroll btn btn-default btn-xl">Portfolio</a>
                 </div>
             </div>
         </div>
@@ -94,7 +87,6 @@
     <section id="portfolio">
         <div class="container">
             <div class="row">
-                
                 <% @projects.each do |project| %>
                     <div class="col-lg-4 col-sm-4  text-center">
                         <a data-project-id="p<%= project.id.to_s %>" class="btn btn-primary btn-xl projectbutton"><%= project.title %></a>
@@ -103,15 +95,10 @@
             </div>
         </div>
     </section>
-
-
-
-
 <!-- Slideshow -->
     <section id="slideshow">
-        
             <% @projects.each do |project| %>
-            <div id="p<%= project.id.to_s %>" class="diy-slideshow <%= project == Project.first ? 'current' : ''%>"> 
+            <div id="p<%= project.id.to_s %>" class="diy-slideshow <%= project == Project.first ? 'current' : ''%>">
                 <% project.photos.each do |p| %>
                 <figure class="<%= project == Project.first && p == project.photos.first ? 'show' : ''%>">
                     <%= image_tag(p.slide, :width=>"100%") %><figcaption><%= p.caption %></figcaption>
@@ -121,53 +108,18 @@
             <span class="next">&raquo;</span>
             </div>
             <% end %>
-
     </section>
 <!-- End Slideshow -->
-    
-
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i href="tel:+19192609484" class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p><a href="tel:+19192609484">Call Me!</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i href="mailto:bssebast@gmail.com"class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:bssebast@gmail.com">Email Me!</a></p>
+                    <a href="mailto:bssebast@gmail.com" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></a>
                 </div>
-                
             </div>
         </div>
     </section>
-
-    <!-- jQuery -->
-    <%# javascript_include_tag "jquery.js", :defer => "defer"  %>
-    <!-- <script src="js/jquery.js"></script> -->
-
-    <!-- Bootstrap Core JavaScript -->
-    <%# javascript_include_tag "bootstrap.min.js", :defer => "defer"  %>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-
-    <!-- Plugin JavaScript -->
-    <%# javascript_include_tag "jquery.easing.min.js", :defer => "defer"  %>
-    <%# javascript_include_tag "jquery.fittext.js", :defer => "defer"  %>
-    <%# javascript_include_tag "wow.min.js", :defer => "defer" %>
-    <!-- <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script> -->
-
-    <!-- Custom Theme JavaScript -->
-    <%# javascript_include_tag "creative.js", :defer => "defer" %>
-    <%# javascript_include_tag "index.js", :defer => "defer" %>
-   <!--  <script src="js/creative.js"></script>
-    <script src="js/index.js"></script> -->
- 
-
 </body>
-
 </html>
