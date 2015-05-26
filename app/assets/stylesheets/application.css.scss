@@ -229,6 +229,13 @@ p {
     font-size: 16px;
     line-height: 1.5;
 }
+p.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+p.uppercase::first-letter {
+  font-size: 25px;
+}
 
 .bg-primary {
     background-color: black;
