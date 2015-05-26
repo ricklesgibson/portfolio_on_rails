@@ -235,9 +235,14 @@ p.uppercase {
     text-align: justify !important;
     text-justify: inter-word !important;
     line-height: 250%;
+    word-spacing: 6px;
+}
+p.uppercase::first-letter {
+  font-size: 200%
+
 }
 p.uppercase > span {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .bg-primary {
